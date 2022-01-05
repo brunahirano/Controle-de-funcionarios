@@ -1,0 +1,44 @@
+<div class="card px-3">
+  <div class="card-body">
+    <h5>{{tituloForm}}</h5>
+  </div>
+  <form [formGroup] = "form">
+    <div class="input-group mb-2">
+      <span class="input-group-text"> <i class="fas fa-user"></i></span>
+      <input type="text" class="form-control" placeholder="Nome do funcionário" formControlName= 'nome'
+        [class.valido]="this.form.get('nome')?.valid"
+        [class.invalido]="this.form.get('nome')?.invalid && this.form.get('nome')?.touched" required minlength="3">
+    </div>
+    <div class="input-group mb-2">
+      <span class="input-group-text"><i class="fas fa-envelope-square"></i> </span>
+      <input type="email" class="form-control" placeholder="Email do funcionário" formControlName= 'email'
+      [class.valido]="this.form.get('email')?.valid"
+      [class.invalido]="this.form.get('email')?.invalid && this.form.get('email')?.touched" required>
+    </div>
+    <div class="input-group mb-2">
+      <label for="">Selecione o cargo:</label>
+    </div>
+    <div>
+      <select name="cargo" class="form-control mb-2" formControlName= 'cargo'
+      [class.valido]="this.form.get('cargo')?.valid"
+      [class.invalido]="this.form.get('cargo')?.invalid && this.form.get('cargo')?.touched" required>
+        <option value="">Selecione:</option>
+        <option value="ADM">Administrativo</option>
+        <option value="RH">Recursos Humanos</option>
+        <option value="TI">Tecnologia da informação</option>
+      </select>
+    </div>
+    <div class="input-group mb-2">
+      <span class="input-group-text"> <i class="fas fa-usd-square"></i> </span>
+      <input type="number" class="form-control" placeholder="Salário do funcionário" formControlName= 'salario'  [class.valido]="this.form.get('salario')?.valid"
+      [class.invalido]="this.form.get('salario')?.invalid && this.form.get('salario')?.touched" required>
+    </div>
+    <div class="input-group mb-2">
+      <input formControlName="foto" type="file" accept=".png, .jpg, .jpeg" (change)="carregarImagem($event)" class="form-control" placeholder="Foto do Funcionário"/>
+    </div>
+    <button type="reset" class="btn btn-danger m-2">Limpar</button>
+    <button [disabled]="!form.valid" class="btn btn-success" (click)="salvarFuncionario()">Salvar</button>
+
+
+  </form>
+</div>

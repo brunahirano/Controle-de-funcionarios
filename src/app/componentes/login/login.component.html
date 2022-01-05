@@ -1,0 +1,14 @@
+<div class="card my-4 p-3 container" style="width: 400px;display: flex; margin: auto;" >
+  <h4>Login</h4>
+  <form class="row" [formGroup]="form">
+    <div>
+      <label>E-mail:</label>
+      <input type="text" class="form-control mb-3" placeholder="Digite aqui o seu e-mail" formControlName="email">
+    </div>
+    <div>
+      <label>Senha:</label>
+      <input type="password" class="form-control mb-3" placeholder="Digite aqui a sua senha" formControlName="senha">
+    </div>
+    <button (click)="fazerLogin()" class="btn btn-primary mb-3" style="width: 150px; margin: auto;">Fazer login</button>
+  </form>
+</div>

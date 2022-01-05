@@ -1,0 +1,7 @@
+.valido{
+  border-color:rgb(1, 1, 146);
+}
+
+.invalido{
+  border-color: red;
+}

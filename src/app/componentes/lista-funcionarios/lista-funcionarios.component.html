@@ -1,0 +1,20 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="titulo">Lista de Funcionários</h5>
+    <section style="overflow: auto; height: 353px;">
+    <table class="table">
+      <tbody>
+        <tr *ngFor="let funcionario of funcionarios">
+          <td>{{funcionario.nome}}</td>
+          <td>{{funcionario.email}}</td>
+          <td>{{funcionario.cargo}}</td>
+          <td>{{funcionario.salario}}</td>
+          <td><i (click)="editar(funcionario)" class="fas fa-edit text-info"></i>
+              <i (click)="excluir(funcionario.id)" class="fas fa-trash-alt text-danger mx-2"></i>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+  </div>
+</div>

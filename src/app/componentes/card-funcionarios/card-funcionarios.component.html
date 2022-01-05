@@ -1,0 +1,12 @@
+<div class="container text-center my-5">
+  <h2>Lista de Funcionários</h2>
+
+  <div class="card mb-5" *ngFor="let funcionario of funcionarios">
+    <img class="card-img-top" src={{funcionario.foto}} style="width: 150px" />
+    <div class="card-body">
+      <h5 class="card-title">{{funcionario.nome}}</h5>
+      <p class="card-text">Cargo: {{funcionario.cargo}}<p></p>
+      <p class="card-text">E-mail: {{funcionario.email}}<p>
+    </div>
+  </div>
+</div>
